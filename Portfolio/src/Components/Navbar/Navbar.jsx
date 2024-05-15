@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import CV from "../assets/CV.png";
+import CV from "../../assets/CV.png";
 
 function Navbar() {
   return (
