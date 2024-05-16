@@ -1,0 +1,56 @@
+.mywork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  margin: 80px 200px;
+}
+.mywork-title {
+  position: relative;
+}
+.mywork-title h1 {
+  padding: 0px 30px;
+  font-size: 80px;
+  font-weight: 600;
+}
+.mywork-title img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.mywork-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+.mywork-container img {
+  width: 416px;
+  height: 280px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.mywork-container img:hover {
+  transform: scale(1.1);
+  border: 4px solid #df8908;
+  border-radius: 16px;
+}
+.mywork-showmore {
+  display: flex;
+  gap: 15px;
+  border-radius: 50px;
+  border: 2px solid white;
+  padding: 14px 28px;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 80px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.mywork-showmore:hover {
+  color: #df8908;
+}
+.mywork-showmore:active {
+  transform: scale(0.98);
+}
