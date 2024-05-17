@@ -16,15 +16,34 @@
   list-style: none;
   gap: 60px;
   font-size: 20px;
+  font-weight: 500;
+  max-width: 700px;
+}
+.anchor-link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
 }
 .nav-connect {
-  padding: 10px 16px;
+  padding: 12px 18px;
   border-radius: 50px;
   background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.5s;
 }
 .nav-connect:hover {
   transform: scale(1.05);
+}
+.nav-menu .highlight {
+  transition: 0.2s;
+  transform: scale(1.3);
+
+  background: linear-gradient(270deg, #df8908 50%, #b415ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-menu li p:hover {
+  color: gray;
 }

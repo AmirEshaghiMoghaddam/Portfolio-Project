@@ -1,10 +1,11 @@
 import React from "react";
 import "./Hero.css";
 import profile_img from "../../assets/profile_img.svg";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 function Hero() {
   return (
-    <div className="hero">
+    <div id="home" className="hero">
       <img src={profile_img} alt="" />
       <h1>
         <span>I'm Amir Es'haghi,</span> frontend developer based in Norway
@@ -14,7 +15,9 @@ function Hero() {
         in modern technologies like JavaScript, TypeScript and ReactJS.
       </p>
       <div className="hero-action">
-        <button className="hero-connect">Connect with me</button>
+        <AnchorLink className="anchor-link" offset={40} href="#contact">
+          <button className="hero-connect">Connect with me</button>
+        </AnchorLink>
         <button className="hero-CV">My resume</button>
       </div>
     </div>
