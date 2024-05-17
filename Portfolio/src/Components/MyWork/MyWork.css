@@ -54,3 +54,32 @@
 .mywork-showmore:active {
   transform: scale(0.98);
 }
+
+@media (max-width: 768px) {
+  .mywork {
+    align-items: start;
+    gap: 50px;
+    margin: 50px 70px;
+  }
+  .mywork-title h1 {
+    padding: 0px;
+    font-size: 50px;
+  }
+  .mywork-title img {
+    width: 130px;
+    margin-right: -20px;
+  }
+  .mywork-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .mywork-container img {
+    width: 100%;
+    height: 100%;
+  }
+  .mywork-showmore {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px auto;
+  }
+}

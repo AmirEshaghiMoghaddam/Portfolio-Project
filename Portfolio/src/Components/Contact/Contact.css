@@ -53,6 +53,7 @@
 .contact-detail {
   display: flex;
   align-items: center;
+
   gap: 20px;
 }
 .contact-right {
@@ -78,7 +79,7 @@
   font-size: 20px;
 }
 .contact-right textarea {
-  width: 650px;
+  width: 100%;
   border: none;
   padding: 25px;
   border-radius: 4px;
@@ -100,4 +101,50 @@
 }
 .contact-submit:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .contact {
+    align-items: start;
+    gap: 50px;
+    margin: 50px 70px;
+  }
+  .contact-title h1 {
+    padding: 0px;
+    font-size: 50px;
+  }
+  .contact-title img {
+    width: 130px;
+    margin-right: -20px;
+  }
+  .contact-section {
+    flex-direction: column;
+  }
+  .contact-left h1 {
+    font-size: 50px;
+  }
+  .contact-left p {
+    font-size: 18px;
+  }
+  .contact-detail {
+    gap: 20px;
+  }
+  .contact-detail img {
+    width: 25px;
+  }
+  .contact-eight label {
+    font-size: 20px;
+  }
+  .contact-right input {
+    width: 100%;
+    font-size: 20px;
+  }
+  .contact-right textarea {
+    width: 100%;
+    font-size: 20px;
+  }
+  .contact-submit {
+    font-size: 20px;
+    padding: 14px 36px;
+  }
 }
