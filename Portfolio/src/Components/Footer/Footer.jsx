@@ -8,10 +8,10 @@ function Footer() {
     <div id="footer" className="footer">
       <div className="footer-top">
         <div className="footer-top-left">
-          <img src={footer_logo} alt="" />
+          <p className="logo">AmirEs'haghi</p>
           <p>
             I am a frontend developer living in Oslo, Norway with 3 years of
-            relevant experience
+            relevant experience.
           </p>
         </div>
         <div className="footer-top-right">

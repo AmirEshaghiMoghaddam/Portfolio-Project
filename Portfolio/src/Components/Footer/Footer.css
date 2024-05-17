@@ -8,6 +8,16 @@
   display: flex;
   justify-content: space-between;
 }
+.footer-top-left p.logo {
+  font-size: 44px;
+  font-family: "Great Vibes", cursive;
+  font-weight: 700;
+  background: linear-gradient(270deg, #b415ff 10%, #df8908);
+  /* background: linear-gradient(270deg, #df8908 10%, #b415ff); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .footer-top-left p {
   font-size: 20px;
   max-width: 400px;
