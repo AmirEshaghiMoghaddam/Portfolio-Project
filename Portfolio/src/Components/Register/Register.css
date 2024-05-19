@@ -4,12 +4,13 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  gap: 0px;
+  gap: 4px;
 }
 .signupContainer .titleContainer {
   display: flex;
   flex-direction: column;
   font-family: Outfit;
+  margin-bottom: 40px;
   font-size: 64px;
   font-weight: 600;
   align-items: center;
@@ -32,10 +33,10 @@
   width: 400px;
 }
 
-.signupContainer .inputContainer > .errorLabel {
+.signupContainer .errorLabel {
   font-size: 16px;
-  margin-top: 2px;
-  margin-left: 4px;
+  margin: 0px 4px;
+  visibility: hidden;
 }
 
 .signupContainer .inputContainer > .inputBox {
@@ -63,6 +64,7 @@
   align-items: center;
   font-size: 18px;
   gap: 20px;
+  margin: 20px 0px;
 }
 .signupContainer .goLogin .goLoginPara {
   color: white;

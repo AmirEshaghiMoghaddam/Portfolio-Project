@@ -74,7 +74,7 @@ function Register() {
     ) {
       isproceed = false;
       setErrorPassword(
-        "password must be between 8 to 16 characters, include at least 1 uppercase, 1 lowercase and 1 special charactor."
+        "password must be between 8 to 16 characters, include at least 1 uppercase, lowercase and 1 special character."
       );
     } else if (password !== repeatPassword) {
       isproceed = false;
@@ -90,7 +90,7 @@ function Register() {
         <div className="titleContainer">
           <div>SignUp</div>
         </div>
-        <br />
+        {/* <br /> */}
         <div className="inputContainer">
           <input
             value={userName}
@@ -99,10 +99,18 @@ function Register() {
             onChange={(e) => setUserName(e.target.value)}
             className="inputBox"
           />
-          <div className="errorLabel">{errorUserName}</div>
+          <div
+            style={
+              errorUserName
+                ? { visibility: "visible" }
+                : { visibility: "hidden" }
+            }
+            className="errorLabel"
+          >
+            {errorUserName || "this is a gapfiller error"}
+          </div>
         </div>
 
-        <br />
         <div className="inputContainer">
           <input
             value={email}
@@ -111,9 +119,16 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
             className="inputBox"
           />
-          <div className="errorLabel">{errorEmail}</div>
+          <div
+            style={
+              errorEmail ? { visibility: "visible" } : { visibility: "hidden" }
+            }
+            className="errorLabel"
+          >
+            {errorEmail || "this is a gapfiller error"}
+          </div>
         </div>
-        <br />
+
         <div className="inputContainer">
           <input
             value={password}
@@ -123,9 +138,18 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
             className="inputBox"
           />
-          <div className="errorLabel">{errorPassword}</div>
+          <div
+            style={
+              errorPassword
+                ? { visibility: "visible" }
+                : { visibility: "hidden" }
+            }
+            className="errorLabel"
+          >
+            {errorPassword || "this is a gapfiller error"}
+          </div>
         </div>
-        <br />
+
         <div className="inputContainer">
           <input
             value={repeatPassword}
@@ -134,16 +158,25 @@ function Register() {
             onChange={(e) => setRepeatPassword(e.target.value)}
             className="inputBox"
           />
-          <div className="errorLabel">{errorRepeatPassword}</div>
+          <div
+            style={
+              errorRepeatPassword
+                ? { visibility: "visible" }
+                : { visibility: "hidden" }
+            }
+            className="errorLabel"
+          >
+            {errorRepeatPassword || "this is a gapfiller error"}
+          </div>
         </div>
-        <br />
+
         <div className="goLogin">
           <p className="goLoginPara">Already have an account?</p>
           <Link to={"/login"} className="goLoginLink">
             Log in here
           </Link>
         </div>
-        <br />
+
         <div className="submitContainer">
           <button className="submitButton" type="submit" value="Submit">
             Submit
