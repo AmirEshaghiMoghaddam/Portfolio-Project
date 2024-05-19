@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./Navbar.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import menu_open from "../../assets/menu_open.svg";
@@ -7,6 +8,8 @@ import menu_close from "../../assets/menu_close.svg";
 function Navbar() {
   const [menu, setMenu] = useState(null);
   const menuRef = useRef();
+
+  const navigate = useNavigate();
 
   const openMenu = () => {
     console.log(menuRef);
@@ -79,10 +82,8 @@ function Navbar() {
           </AnchorLink>
         </li>
       </ul>
-      <div className="nav-connect">
-        <AnchorLink className="anchor-link" offset={40} href="#contact">
-          Connect With Me
-        </AnchorLink>
+      <div onClick={() => navigate("/register")} className="nav-connect">
+        <div>Signup/ Login</div>
       </div>
     </div>
   );
