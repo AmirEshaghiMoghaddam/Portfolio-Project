@@ -4,11 +4,13 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  gap: 4px;
 }
 .loginContainer .titleContainer {
   display: flex;
   flex-direction: column;
   font-family: Outfit;
+  margin-bottom: 10px;
   font-size: 64px;
   font-weight: 600;
   align-items: center;
@@ -30,9 +32,10 @@
   justify-content: center;
 }
 
-.loginContainer .inputContainer > .errorLabel {
-  color: red;
-  font-size: 12px;
+.loginContainer .errorLabel {
+  font-size: 16px;
+  margin: 0px 4px;
+  visibility: hidden;
 }
 
 .loginContainer .inputContainer > .inputBox {
@@ -73,18 +76,18 @@
   transform: scale(1.2);
 }
 
-.loginContainer .inputContainer > .submitButton {
+.loginContainer .submitContainer > .submitButton {
   border: none;
   /* background: cornflowerblue; */
   background: linear-gradient(270deg, #df8908 10%, #b415ff);
   color: white;
   padding: 10px 18px;
-  margin: 8px;
+  margin: 10px;
   font-size: 24px;
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
 }
-.loginContainer .inputContainer > .submitButton:active {
+.loginContainer .submitContainer > .submitButton:active {
   transform: scale(0.98);
 }

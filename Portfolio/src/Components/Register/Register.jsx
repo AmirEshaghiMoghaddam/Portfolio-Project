@@ -4,12 +4,12 @@ import "./Register.css";
 import toast from "react-hot-toast";
 
 function Register() {
-  const [userName, setUserName] = useState("");
+  const [id, setId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  const [errorUserName, setErrorUserName] = useState("");
+  const [errorId, setErrorId] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [errorRepeatPassword, setErrorRepeatPassword] = useState("");
@@ -18,13 +18,10 @@ function Register() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setErrorUserName();
-    setErrorEmail();
-    setErrorPassword();
-    setErrorRepeatPassword();
+
     // console.log("submitetd");
     // console.log(e.target);
-    let formObj = { userName, email, password };
+    let formObj = { id, email, password };
     // console.log(formObj);
     if (IsValidate()) {
       fetch("http://localhost:8000/user", {
@@ -47,26 +44,28 @@ function Register() {
 
   const IsValidate = () => {
     let isproceed = true;
-    let emptyErrorMessage = "Please enter the ";
-    let inequalityErrorMessage = "The passwords are not match.";
-    if (userName === null || userName === "") {
+    setErrorId();
+    setErrorEmail();
+    setErrorPassword();
+    setErrorRepeatPassword();
+
+    if (id === null || id === "") {
       isproceed = false;
-      emptyErrorMessage += " username";
-      setErrorUserName("please enter the username.");
-    } else if (!/^[A-Za-z][A-Za-z0-9_'\s?]{2,30}$/.test(userName)) {
+      setErrorId("please enter your username.");
+    } else if (!/^[A-Za-z][A-Za-z0-9_'\s?]{2,30}$/.test(id)) {
       isproceed = false;
-      setErrorUserName("username must be between 3 to 30 letters.");
+      setErrorId("username must be between 3 to 30 letters.");
     } else if (email === null || email === "") {
       isproceed = false;
-      emptyErrorMessage += " email";
-      setErrorEmail("please enter the email.");
+
+      setErrorEmail("please enter your email.");
     } else if (!/^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
       isproceed = false;
       setErrorEmail("please enter valid email");
     } else if (password === null || password === "") {
       isproceed = false;
-      emptyErrorMessage += " password";
-      setErrorPassword("please enter the password.");
+
+      setErrorPassword("please enter your password.");
     } else if (
       !/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/.test(
         password
@@ -78,7 +77,7 @@ function Register() {
       );
     } else if (password !== repeatPassword) {
       isproceed = false;
-      toast.error(inequalityErrorMessage);
+
       setErrorRepeatPassword("both passwords must be exaxctly equal.");
     }
     return isproceed;
@@ -90,24 +89,22 @@ function Register() {
         <div className="titleContainer">
           <div>SignUp</div>
         </div>
-        {/* <br /> */}
+
         <div className="inputContainer">
           <input
-            value={userName}
+            value={id}
             autoComplete="name"
             placeholder="Enter your username here"
-            onChange={(e) => setUserName(e.target.value)}
+            onChange={(e) => setId(e.target.value)}
             className="inputBox"
           />
           <div
             style={
-              errorUserName
-                ? { visibility: "visible" }
-                : { visibility: "hidden" }
+              errorId ? { visibility: "visible" } : { visibility: "hidden" }
             }
             className="errorLabel"
           >
-            {errorUserName || "this is a gapfiller error"}
+            {errorId || "this is a gapfiller error"}
           </div>
         </div>
 
@@ -156,6 +153,7 @@ function Register() {
             type="password"
             placeholder="Repeat your password"
             onChange={(e) => setRepeatPassword(e.target.value)}
+            onBlur={IsValidate}
             className="inputBox"
           />
           <div

@@ -1,56 +1,13 @@
 {
   "user": [
     {
-      "id": "0bce",
-      "userName": "amir",
-      "email": "a.em@outlook.com",
-      "password": "123"
-    },
-    {
-      "id": "c7de",
-      "userName": "amir2",
-      "email": "a.em@outlook.com",
-      "password": "456"
-    },
-    {
-      "id": "3d21",
-      "userName": "dfgadfg",
-      "email": "a.em@outlook.com",
-      "password": "dasf"
-    },
-    {
-      "id": "6ed0",
-      "userName": "dfsafds",
-      "email": "gdsagfd",
-      "password": "gdsafga"
-    },
-    {
-      "id": "cc80",
-      "userName": "rghesf",
-      "email": "gfsdgfdsa",
-      "password": "gfgdsafgfd"
-    },
-    {
-      "id": "3a25",
-      "userName": "amir3",
-      "email": "a.em@outlook.com",
-      "password": "456789"
-    },
-    {
-      "id": "02aa",
-      "userName": "hgf",
-      "email": "a.em@outlook.com",
-      "password": "123"
-    },
-    {
-      "id": "e17f",
-      "userName": "amir",
-      "email": "a.em@outlook.com",
-      "password": "Barcelona1989!"
-    },
-    {
       "id": "5d3d",
       "userName": "Amir Es'haghi",
+      "email": "a.em@outlook.com",
+      "password": "Barcelona2020!"
+    },
+    {
+      "id": "Amir2020",
       "email": "a.em@outlook.com",
       "password": "Barcelona2020!"
     }
