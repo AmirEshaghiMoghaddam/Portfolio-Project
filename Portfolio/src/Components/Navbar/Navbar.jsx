@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Navbar.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -7,9 +7,19 @@ import menu_close from "../../assets/menu_close.svg";
 
 function Navbar() {
   const [menu, setMenu] = useState(null);
+  const [loginStatus, setLoginStatus] = useState(false);
+  const [userName, setUserName] = useState("");
   const menuRef = useRef();
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    let username = sessionStorage.getItem("username");
+    setUserName(username);
+    username === "" || username === null
+      ? setLoginStatus(false)
+      : setLoginStatus(true);
+  }, []);
 
   const openMenu = () => {
     console.log(menuRef);
@@ -22,7 +32,12 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <p className="logo">AmirEs'haghi</p>
+      {loginStatus ? (
+        <p className="user">Welcome {userName}</p>
+      ) : (
+        <p className="logo">AmirEs'haghi</p>
+      )}
+      {/* <p className="logo">AmirEs'haghi</p> */}
       <img src={menu_open} onClick={openMenu} alt="" className="nav-mob-open" />
       <ul ref={menuRef} className="nav-menu">
         <img
@@ -82,9 +97,16 @@ function Navbar() {
           </AnchorLink>
         </li>
       </ul>
-      <div onClick={() => navigate("/register")} className="nav-connect">
-        <div>Signup/ Login</div>
-      </div>
+
+      {loginStatus ? (
+        <div onClick={() => setLoginStatus(false)} className="nav-connect">
+          Log out
+        </div>
+      ) : (
+        <div onClick={() => navigate("/login")} className="nav-connect">
+          Signup/ Login
+        </div>
+      )}
     </div>
   );
 }
